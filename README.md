@@ -1,3 +1,3 @@
-# Neural-Symbolic Recommendation Model based on Logical Queries
+# Neural-Symbolic Recommendation Model based on Logical Query
 
 comming soon...
