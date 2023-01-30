@@ -1,0 +1,183 @@
+INFO:root:{'rank': 1, 'data_loader': 'DataLoader', 'model_name': 'NPQA', 'runner_name': 'BaseRunner', 'data_processor': 'ProLogicRecDP'}
+INFO:root:{'gpu': '0', 'verbose': 20, 'log_file': '../log/log.txt', 'result_file': '../result/result.npy', 'random_seed': 2022, 'train': 0, 'path': '../dataset/', 'dataset': 'ml100k01-1-5', 'sep': '\t', 'seq_sep': ',', 'label': 'label', 'drop_neg': 1, 'variable_num': -1, 'seq_rec': 1, 'or_and': 1, 'v_vector_size': 64, 'r_logic': 1e-05, 'r_length': 0.0001, 'sim_scale': 10, 'sim_alpha': 0, 'layers': 1, 'loss_sum': 1, 'model_path': '../model/NPQA/NPQA.pt', 'load': 1, 'load_model_path': 'NLQ-ML100K.pt', 'epoch': 500, 'check_epoch': 1, 'early_stop': 0, 'lr': 0.0001, 'batch_size': 128, 'eval_batch_size': 16384, 'dropout': 0.2, 'l2_bias': 0, 'l2': 0.0001, 'l2s': 0.0, 'grad_clip': 10, 'optimizer': 'Adam', 'metrics': 'ndcg@10,precision@1', 'pre_gpu': 0, 'shuffle_his': 0, 'all_his': 0, 'max_his': 10, 'neg_his': 1, 'neg_column': 0, 'sparse_his': 0, 'sup_his': 0, 'drop_first': 1, 'test_sample_n': 100, 'train_sample_n': 1, 'sample_un_p': 1.0, 'unlabel_test': 0}
+INFO:root:['--rank', '1', '--model_name', 'NPQA']
+INFO:root:DataLoader: DataLoader
+INFO:root:Model: NPQA
+INFO:root:Runner: BaseRunner
+INFO:root:DataProcessor: ProLogicRecDP
+INFO:root:# cuda devices: 1
+INFO:root:DataLoader: {'dataset': 'ml100k01-1-5', 'label': 'label', 'load_data': True, 'path': '../dataset/', 'sep': '\t', 'seq_sep': ','}
+INFO:root:load user csv...
+INFO:root:load item csv...
+INFO:root:load train csv...
+INFO:root:size of train: 94780
+INFO:root:train label: {1: 53514, 0: 41266}
+INFO:root:load validation csv...
+INFO:root:size of validation: 2253
+INFO:root:validation label: {0: 1325, 1: 928}
+INFO:root:load test csv...
+INFO:root:size of test: 2967
+INFO:root:test label: {0: 2034, 1: 933}
+INFO:root:load history csv...
+INFO:root:label: 0-1
+INFO:root:# of users: 944
+INFO:root:# of items: 1683
+INFO:root:# of user features: 3
+INFO:root:# of item features: 20
+INFO:root:# of context features: 0
+INFO:root:# of features: 23
+INFO:root:Save dataset info to ../dataset/ml100k01-1-5/ml100k01-1-5.info.json
+INFO:root:Transform label to 0-1
+INFO:root:train label: {1: 53514, 0: 41266}
+INFO:root:validation label: {0: 1325, 1: 928}
+INFO:root:test label: {0: 2034, 1: 933}
+INFO:root:Drop Neg Samples...
+INFO:root:size of train: 53514
+INFO:root:size of validation: 928
+INFO:root:size of test: 933
+INFO:root:ProLogicRecDP: {'data_loader': <data_loaders.DataLoader.DataLoader object at 0x7f37ec00ae48>, 'drop_first': 1, 'max_his': 10, 'rank': 1, 'sample_un_p': 1.0, 'shuffle_his': 0, 'sparse_his': 0, 'sup_his': 0, 'test_sample_n': 100, 'train_sample_n': 1, 'unlabel_test': 0}
+INFO:root:Prepare Train Data...
+INFO:root:Prepare Validation Data...
+INFO:root:Prepare Test Data...
+INFO:root:Model # of features 2
+INFO:root:Model # of feature dims 2627
+INFO:root:NPQA: {'feature_num': 2, 'item_num': 1683, 'l2_bias': 0, 'label_max': 1, 'label_min': 0, 'layers': 1, 'loss_sum': 1, 'model_path': '../model/NPQA/NPQA.pt', 'or_and': 1, 'r_length': 0.0001, 'r_logic': 1e-05, 'random_seed': 2022, 'seq_rec': 1, 'sim_alpha': 0, 'sim_scale': 10, 'user_num': 944, 'v_vector_size': 64, 'variable_num': -1}
+INFO:root:# of params: 1773792
+INFO:root:BaseRunner: {'batch_size': 128, 'check_epoch': 1, 'dropout': 0.2, 'early_stop': 0, 'epoch': 500, 'eval_batch_size': 16384, 'grad_clip': 10, 'l2': 0.0001, 'l2_bias': 0, 'l2s': 0.0, 'lr': 0.0001, 'metrics': 'ndcg@10,precision@1', 'optimizer': 'Adam', 'pre_gpu': 0}
+INFO:root:Test Before Training: train= 1.0000,1.0000 validation= 0.0549,0.0151 test= 0.0487,0.0118 ndcg@10,precision@1
+INFO:root:Load model from NLQ-ML100K.pt
+INFO:root:Save Results to ../result/result.npy
+INFO:root:
+Test After Training on Train: ndcg@1=1.0000, ndcg@5=1.0000, ndcg@10=1.0000, ndcg@20=-1, ndcg@50=-1, ndcg@100=-1, hit@1=1.0000, hit@5=1.0000, hit@10=1.0000, hit@20=1.0000, hit@50=1.0000, hit@100=1.0000, precision@1=1.0000, precision@5=1.0000, precision@10=1.0000, precision@20=1.0000, precision@50=1.0000, precision@100=1.0000, recall@1=0.7582, recall@5=0.9955, recall@10=1.0000, recall@20=1.0000, recall@50=1.0000, recall@100=1.0000
+
+INFO:root:
+Test After Training on Valid: ndcg@1=0.2522, ndcg@5=0.4201, ndcg@10=0.4780, ndcg@20=0.5076, ndcg@50=0.5288, ndcg@100=0.5333, hit@1=0.2522, hit@5=0.5754, hit@10=0.7532, hit@20=0.8685, hit@50=0.9731, hit@100=1.0000, precision@1=0.2522, precision@5=0.1151, precision@10=0.0753, precision@20=0.0434, precision@50=0.0195, precision@100=0.0100, recall@1=0.2522, recall@5=0.5754, recall@10=0.7532, recall@20=0.8685, recall@50=0.9731, recall@100=1.0000
+
+INFO:root:
+Test After Training on Test: ndcg@1=0.2004, ndcg@5=0.3802, ndcg@10=0.4357, ndcg@20=0.4722, ndcg@50=0.4919, ndcg@100=0.4977, hit@1=0.2004, hit@5=0.5509, hit@10=0.7224, hit@20=0.8660, hit@50=0.9636, hit@100=0.9989, precision@1=0.2004, precision@5=0.1102, precision@10=0.0722, precision@20=0.0433, precision@50=0.0193, precision@100=0.0100, recall@1=0.2004, recall@5=0.5509, recall@10=0.7224, recall@20=0.8660, recall@50=0.9636, recall@100=0.9989
+
+INFO:root:# of params: 1773792
+INFO:root:{'gpu': '0', 'verbose': 20, 'log_file': '../log/log.txt', 'result_file': '../result/result.npy', 'random_seed': 2022, 'train': 0, 'path': '../dataset/', 'dataset': 'ml100k01-1-5', 'sep': '\t', 'seq_sep': ',', 'label': 'label', 'drop_neg': 1, 'variable_num': -1, 'seq_rec': 1, 'or_and': 1, 'v_vector_size': 64, 'r_logic': 1e-05, 'r_length': 0.0001, 'sim_scale': 10, 'sim_alpha': 0, 'layers': 1, 'loss_sum': 1, 'model_path': '../model/NPQA/NPQA.pt', 'load': 1, 'load_model_path': 'NLQ-ML100K.pt', 'epoch': 500, 'check_epoch': 1, 'early_stop': 0, 'lr': 0.0001, 'batch_size': 128, 'eval_batch_size': 16384, 'dropout': 0.2, 'l2_bias': 0, 'l2': 0.0001, 'l2s': 0.0, 'grad_clip': 10, 'optimizer': 'Adam', 'metrics': 'ndcg@10,precision@1', 'pre_gpu': 0, 'shuffle_his': 0, 'all_his': 0, 'max_his': 10, 'neg_his': 1, 'neg_column': 0, 'sparse_his': 0, 'sup_his': 0, 'drop_first': 1, 'test_sample_n': 100, 'train_sample_n': 1, 'sample_un_p': 1.0, 'unlabel_test': 0}
+INFO:root:2023-01-30 14:56:13
+INFO:root:{'rank': 1, 'data_loader': 'DataLoader', 'model_name': 'NPQA', 'runner_name': 'BaseRunner', 'data_processor': 'ProLogicRecDP'}
+INFO:root:{'gpu': '0', 'verbose': 20, 'log_file': '../log/log.txt', 'result_file': '../result/result.npy', 'random_seed': 2022, 'train': 0, 'path': '../dataset/', 'dataset': 'ml100k01-1-5', 'sep': '\t', 'seq_sep': ',', 'label': 'label', 'drop_neg': 1, 'variable_num': -1, 'seq_rec': 1, 'or_and': 1, 'v_vector_size': 64, 'r_logic': 1e-05, 'r_length': 0.0001, 'sim_scale': 10, 'sim_alpha': 0, 'layers': 1, 'loss_sum': 1, 'model_path': '../model/NPQA/NPQA.pt', 'load': 1, 'load_model_path': 'NLQ-ML100K.pt', 'epoch': 500, 'check_epoch': 1, 'early_stop': 0, 'lr': 0.0001, 'batch_size': 128, 'eval_batch_size': 16384, 'dropout': 0.2, 'l2_bias': 0, 'l2': 0.0001, 'l2s': 0.0, 'grad_clip': 10, 'optimizer': 'Adam', 'metrics': 'ndcg@10,precision@1', 'pre_gpu': 0, 'shuffle_his': 0, 'all_his': 0, 'max_his': 10, 'neg_his': 1, 'neg_column': 0, 'sparse_his': 0, 'sup_his': 0, 'drop_first': 1, 'test_sample_n': 100, 'train_sample_n': 1, 'sample_un_p': 1.0, 'unlabel_test': 0}
+INFO:root:['--rank', '1', '--model_name', 'NPQA']
+INFO:root:DataLoader: DataLoader
+INFO:root:Model: NPQA
+INFO:root:Runner: BaseRunner
+INFO:root:DataProcessor: ProLogicRecDP
+INFO:root:# cuda devices: 1
+INFO:root:DataLoader: {'dataset': 'ml100k01-1-5', 'label': 'label', 'load_data': True, 'path': '../dataset/', 'sep': '\t', 'seq_sep': ','}
+INFO:root:load user csv...
+INFO:root:load item csv...
+INFO:root:load train csv...
+INFO:root:size of train: 94780
+INFO:root:train label: {1: 53514, 0: 41266}
+INFO:root:load validation csv...
+INFO:root:size of validation: 2253
+INFO:root:validation label: {0: 1325, 1: 928}
+INFO:root:load test csv...
+INFO:root:size of test: 2967
+INFO:root:test label: {0: 2034, 1: 933}
+INFO:root:load history csv...
+INFO:root:label: 0-1
+INFO:root:# of users: 944
+INFO:root:# of items: 1683
+INFO:root:# of user features: 3
+INFO:root:# of item features: 20
+INFO:root:# of context features: 0
+INFO:root:# of features: 23
+INFO:root:Save dataset info to ../dataset/ml100k01-1-5/ml100k01-1-5.info.json
+INFO:root:Transform label to 0-1
+INFO:root:train label: {1: 53514, 0: 41266}
+INFO:root:validation label: {0: 1325, 1: 928}
+INFO:root:test label: {0: 2034, 1: 933}
+INFO:root:Drop Neg Samples...
+INFO:root:size of train: 53514
+INFO:root:size of validation: 928
+INFO:root:size of test: 933
+INFO:root:ProLogicRecDP: {'data_loader': <data_loaders.DataLoader.DataLoader object at 0x7f0d3583fe80>, 'drop_first': 1, 'max_his': 10, 'rank': 1, 'sample_un_p': 1.0, 'shuffle_his': 0, 'sparse_his': 0, 'sup_his': 0, 'test_sample_n': 100, 'train_sample_n': 1, 'unlabel_test': 0}
+INFO:root:Prepare Train Data...
+INFO:root:Prepare Validation Data...
+INFO:root:Prepare Test Data...
+INFO:root:Model # of features 2
+INFO:root:Model # of feature dims 2627
+INFO:root:NPQA: {'feature_num': 2, 'item_num': 1683, 'l2_bias': 0, 'label_max': 1, 'label_min': 0, 'layers': 1, 'loss_sum': 1, 'model_path': '../model/NPQA/NPQA.pt', 'or_and': 1, 'r_length': 0.0001, 'r_logic': 1e-05, 'random_seed': 2022, 'seq_rec': 1, 'sim_alpha': 0, 'sim_scale': 10, 'user_num': 944, 'v_vector_size': 64, 'variable_num': -1}
+INFO:root:# of params: 1773792
+INFO:root:BaseRunner: {'batch_size': 128, 'check_epoch': 1, 'dropout': 0.2, 'early_stop': 0, 'epoch': 500, 'eval_batch_size': 16384, 'grad_clip': 10, 'l2': 0.0001, 'l2_bias': 0, 'l2s': 0.0, 'lr': 0.0001, 'metrics': 'ndcg@10,precision@1', 'optimizer': 'Adam', 'pre_gpu': 0}
+INFO:root:Test Before Training: train= 1.0000,1.0000 validation= 0.0549,0.0151 test= 0.0487,0.0118 ndcg@10,precision@1
+INFO:root:Load model from NLQ-ML100K.pt
+INFO:root:Save Results to ../result/result.npy
+INFO:root:
+Test After Training on Train: ndcg@1=1.0000, ndcg@5=1.0000, ndcg@10=1.0000, ndcg@20=-1, ndcg@50=-1, ndcg@100=-1, hit@1=1.0000, hit@5=1.0000, hit@10=1.0000, hit@20=1.0000, hit@50=1.0000, hit@100=1.0000, precision@1=1.0000, precision@5=1.0000, precision@10=1.0000, precision@20=1.0000, precision@50=1.0000, precision@100=1.0000, recall@1=0.7582, recall@5=0.9955, recall@10=1.0000, recall@20=1.0000, recall@50=1.0000, recall@100=1.0000
+
+INFO:root:
+Test After Training on Valid: ndcg@1=0.2522, ndcg@5=0.4201, ndcg@10=0.4780, ndcg@20=0.5076, ndcg@50=0.5288, ndcg@100=0.5333, hit@1=0.2522, hit@5=0.5754, hit@10=0.7532, hit@20=0.8685, hit@50=0.9731, hit@100=1.0000, precision@1=0.2522, precision@5=0.1151, precision@10=0.0753, precision@20=0.0434, precision@50=0.0195, precision@100=0.0100, recall@1=0.2522, recall@5=0.5754, recall@10=0.7532, recall@20=0.8685, recall@50=0.9731, recall@100=1.0000
+
+INFO:root:
+Test After Training on Test: ndcg@1=0.2004, ndcg@5=0.3802, ndcg@10=0.4357, ndcg@20=0.4722, ndcg@50=0.4919, ndcg@100=0.4977, hit@1=0.2004, hit@5=0.5509, hit@10=0.7224, hit@20=0.8660, hit@50=0.9636, hit@100=0.9989, precision@1=0.2004, precision@5=0.1102, precision@10=0.0722, precision@20=0.0433, precision@50=0.0193, precision@100=0.0100, recall@1=0.2004, recall@5=0.5509, recall@10=0.7224, recall@20=0.8660, recall@50=0.9636, recall@100=0.9989
+
+INFO:root:# of params: 1773792
+INFO:root:{'gpu': '0', 'verbose': 20, 'log_file': '../log/log.txt', 'result_file': '../result/result.npy', 'random_seed': 2022, 'train': 0, 'path': '../dataset/', 'dataset': 'ml100k01-1-5', 'sep': '\t', 'seq_sep': ',', 'label': 'label', 'drop_neg': 1, 'variable_num': -1, 'seq_rec': 1, 'or_and': 1, 'v_vector_size': 64, 'r_logic': 1e-05, 'r_length': 0.0001, 'sim_scale': 10, 'sim_alpha': 0, 'layers': 1, 'loss_sum': 1, 'model_path': '../model/NPQA/NPQA.pt', 'load': 1, 'load_model_path': 'NLQ-ML100K.pt', 'epoch': 500, 'check_epoch': 1, 'early_stop': 0, 'lr': 0.0001, 'batch_size': 128, 'eval_batch_size': 16384, 'dropout': 0.2, 'l2_bias': 0, 'l2': 0.0001, 'l2s': 0.0, 'grad_clip': 10, 'optimizer': 'Adam', 'metrics': 'ndcg@10,precision@1', 'pre_gpu': 0, 'shuffle_his': 0, 'all_his': 0, 'max_his': 10, 'neg_his': 1, 'neg_column': 0, 'sparse_his': 0, 'sup_his': 0, 'drop_first': 1, 'test_sample_n': 100, 'train_sample_n': 1, 'sample_un_p': 1.0, 'unlabel_test': 0}
+INFO:root:2023-01-30 15:15:53
+INFO:root:{'rank': 1, 'data_loader': 'DataLoader', 'model_name': 'NPQA', 'runner_name': 'BaseRunner', 'data_processor': 'ProLogicRecDP'}
+INFO:root:{'gpu': '0', 'verbose': 20, 'log_file': '../log/log.txt', 'result_file': '../result/result.npy', 'random_seed': 2022, 'train': 0, 'path': '../dataset/', 'dataset': 'ml100k01-1-5', 'sep': '\t', 'seq_sep': ',', 'label': 'label', 'drop_neg': 1, 'variable_num': -1, 'seq_rec': 1, 'or_and': 1, 'v_vector_size': 64, 'r_logic': 1e-05, 'r_length': 0.0001, 'sim_scale': 10, 'sim_alpha': 0, 'layers': 1, 'loss_sum': 1, 'model_path': '../model/NPQA/NPQA.pt', 'load': 1, 'load_model_path': 'NLQ-ML100K.pt', 'epoch': 500, 'check_epoch': 1, 'early_stop': 0, 'lr': 0.0001, 'batch_size': 128, 'eval_batch_size': 16384, 'dropout': 0.2, 'l2_bias': 0, 'l2': 0.0001, 'l2s': 0.0, 'grad_clip': 10, 'optimizer': 'Adam', 'metrics': 'ndcg@10,precision@1', 'pre_gpu': 0, 'shuffle_his': 0, 'all_his': 0, 'max_his': 10, 'neg_his': 1, 'neg_column': 0, 'sparse_his': 0, 'sup_his': 0, 'drop_first': 1, 'test_sample_n': 100, 'train_sample_n': 1, 'sample_un_p': 1.0, 'unlabel_test': 0}
+INFO:root:['--rank', '1', '--model_name', 'NPQA']
+INFO:root:DataLoader: DataLoader
+INFO:root:Model: NPQA
+INFO:root:Runner: BaseRunner
+INFO:root:DataProcessor: ProLogicRecDP
+INFO:root:# cuda devices: 1
+INFO:root:DataLoader: {'dataset': 'ml100k01-1-5', 'label': 'label', 'load_data': True, 'path': '../dataset/', 'sep': '\t', 'seq_sep': ','}
+INFO:root:load user csv...
+INFO:root:load item csv...
+INFO:root:load train csv...
+INFO:root:size of train: 94780
+INFO:root:train label: {1: 53514, 0: 41266}
+INFO:root:load validation csv...
+INFO:root:size of validation: 2253
+INFO:root:validation label: {0: 1325, 1: 928}
+INFO:root:load test csv...
+INFO:root:size of test: 2967
+INFO:root:test label: {0: 2034, 1: 933}
+INFO:root:load history csv...
+INFO:root:label: 0-1
+INFO:root:# of users: 944
+INFO:root:# of items: 1683
+INFO:root:# of user features: 3
+INFO:root:# of item features: 20
+INFO:root:# of context features: 0
+INFO:root:# of features: 23
+INFO:root:Save dataset info to ../dataset/ml100k01-1-5/ml100k01-1-5.info.json
+INFO:root:Transform label to 0-1
+INFO:root:train label: {1: 53514, 0: 41266}
+INFO:root:validation label: {0: 1325, 1: 928}
+INFO:root:test label: {0: 2034, 1: 933}
+INFO:root:Drop Neg Samples...
+INFO:root:size of train: 53514
+INFO:root:size of validation: 928
+INFO:root:size of test: 933
+INFO:root:ProLogicRecDP: {'data_loader': <data_loaders.DataLoader.DataLoader object at 0x7f06f390abe0>, 'drop_first': 1, 'max_his': 10, 'rank': 1, 'sample_un_p': 1.0, 'shuffle_his': 0, 'sparse_his': 0, 'sup_his': 0, 'test_sample_n': 100, 'train_sample_n': 1, 'unlabel_test': 0}
+INFO:root:Prepare Train Data...
+INFO:root:Prepare Validation Data...
+INFO:root:Prepare Test Data...
+INFO:root:Model # of features 2
+INFO:root:Model # of feature dims 2627
+INFO:root:NPQA: {'feature_num': 2, 'item_num': 1683, 'l2_bias': 0, 'label_max': 1, 'label_min': 0, 'layers': 1, 'loss_sum': 1, 'model_path': '../model/NPQA/NPQA.pt', 'or_and': 1, 'r_length': 0.0001, 'r_logic': 1e-05, 'random_seed': 2022, 'seq_rec': 1, 'sim_alpha': 0, 'sim_scale': 10, 'user_num': 944, 'v_vector_size': 64, 'variable_num': -1}
+INFO:root:# of params: 1773792
+INFO:root:BaseRunner: {'batch_size': 128, 'check_epoch': 1, 'dropout': 0.2, 'early_stop': 0, 'epoch': 500, 'eval_batch_size': 16384, 'grad_clip': 10, 'l2': 0.0001, 'l2_bias': 0, 'l2s': 0.0, 'lr': 0.0001, 'metrics': 'ndcg@10,precision@1', 'optimizer': 'Adam', 'pre_gpu': 0}
+INFO:root:Test Before Training: train= 1.0000,1.0000 validation= 0.0549,0.0151 test= 0.0487,0.0118 ndcg@10,precision@1
+INFO:root:Load model from NLQ-ML100K.pt
+INFO:root:Save Results to ../result/result.npy
+INFO:root:
+Test After Training on Train: ndcg@1=1.0000, ndcg@5=1.0000, ndcg@10=1.0000, ndcg@20=-1, ndcg@50=-1, ndcg@100=-1, hit@1=1.0000, hit@5=1.0000, hit@10=1.0000, hit@20=1.0000, hit@50=1.0000, hit@100=1.0000, precision@1=1.0000, precision@5=1.0000, precision@10=1.0000, precision@20=1.0000, precision@50=1.0000, precision@100=1.0000, recall@1=0.7582, recall@5=0.9955, recall@10=1.0000, recall@20=1.0000, recall@50=1.0000, recall@100=1.0000
+
+INFO:root:
+Test After Training on Valid: ndcg@1=0.2522, ndcg@5=0.4201, ndcg@10=0.4780, ndcg@20=0.5076, ndcg@50=0.5288, ndcg@100=0.5333, hit@1=0.2522, hit@5=0.5754, hit@10=0.7532, hit@20=0.8685, hit@50=0.9731, hit@100=1.0000, precision@1=0.2522, precision@5=0.1151, precision@10=0.0753, precision@20=0.0434, precision@50=0.0195, precision@100=0.0100, recall@1=0.2522, recall@5=0.5754, recall@10=0.7532, recall@20=0.8685, recall@50=0.9731, recall@100=1.0000
+
+INFO:root:
+Test After Training on Test: ndcg@1=0.2004, ndcg@5=0.3802, ndcg@10=0.4357, ndcg@20=0.4722, ndcg@50=0.4919, ndcg@100=0.4977, hit@1=0.2004, hit@5=0.5509, hit@10=0.7224, hit@20=0.8660, hit@50=0.9636, hit@100=0.9989, precision@1=0.2004, precision@5=0.1102, precision@10=0.0722, precision@20=0.0433, precision@50=0.0193, precision@100=0.0100, recall@1=0.2004, recall@5=0.5509, recall@10=0.7224, recall@20=0.8660, recall@50=0.9636, recall@100=0.9989
+
+INFO:root:# of params: 1773792
+INFO:root:{'gpu': '0', 'verbose': 20, 'log_file': '../log/log.txt', 'result_file': '../result/result.npy', 'random_seed': 2022, 'train': 0, 'path': '../dataset/', 'dataset': 'ml100k01-1-5', 'sep': '\t', 'seq_sep': ',', 'label': 'label', 'drop_neg': 1, 'variable_num': -1, 'seq_rec': 1, 'or_and': 1, 'v_vector_size': 64, 'r_logic': 1e-05, 'r_length': 0.0001, 'sim_scale': 10, 'sim_alpha': 0, 'layers': 1, 'loss_sum': 1, 'model_path': '../model/NPQA/NPQA.pt', 'load': 1, 'load_model_path': 'NLQ-ML100K.pt', 'epoch': 500, 'check_epoch': 1, 'early_stop': 0, 'lr': 0.0001, 'batch_size': 128, 'eval_batch_size': 16384, 'dropout': 0.2, 'l2_bias': 0, 'l2': 0.0001, 'l2s': 0.0, 'grad_clip': 10, 'optimizer': 'Adam', 'metrics': 'ndcg@10,precision@1', 'pre_gpu': 0, 'shuffle_his': 0, 'all_his': 0, 'max_his': 10, 'neg_his': 1, 'neg_column': 0, 'sparse_his': 0, 'sup_his': 0, 'drop_first': 1, 'test_sample_n': 100, 'train_sample_n': 1, 'sample_un_p': 1.0, 'unlabel_test': 0}
+INFO:root:2023-01-30 15:19:09
